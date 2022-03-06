@@ -1,0 +1,11 @@
+_target_: udons.models.jigsaw_lstm_model.JigsawLSTMModel
+
+lr: 0.001
+weight_decay: 0.0005
+nb_classes: "${datamodule: nb_classes}"
+nb_patches: "${datamodule: nb_patches}"
+nb_channels: "${datamodule: nb_channels}"
+patch_len: "${datamodule: patch_len}"
+n_mels: "${datamodule: n_mels}"
+nb_layers: 1
+hidden_size: 256

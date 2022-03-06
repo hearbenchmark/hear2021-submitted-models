@@ -1,0 +1,45 @@
+# @package _global_
+
+# to execute this experiment run:
+# python run.py experiment=jigsaw_audioset.yaml
+
+defaults:
+  - override /trainer: default.yaml # choose trainer from 'configs/trainer/'
+  - override /model: jigsawreg_transformer_model.yaml
+  - override /datamodule: jigsawaudio_datamodule.yaml
+  - override /callbacks: default.yaml
+  - override /logger: tensorboard.yaml
+  - override /hydra/sweeper: optuna
+
+# all parameters below will be merged with parameters from default configurations set above
+# this allows you to overwrite only specified parameters
+
+seed: 12345
+
+trainer:
+  min_epochs: 1
+  max_epochs: 1000
+  gpus: [2]
+
+model:
+  lr: 0.001
+
+datamodule:
+  train_dir: train-clean-360
+  valid_dir: dev-clean
+  test_dir: test-clean
+  batch_size: 64
+  nb_patches: 5
+  nb_classes: 120
+  nb_channels: 1
+  nb_timesteps: 48000  # chunk lenght in samples
+  patch_len: 32
+  num_workers: 32
+  n_fft: 400
+  hop_length: 100
+  n_mels: 128
+  f_min: 27.5
+  f_max: 16000
+  sample_rate: 16000
+  patch_jitter_min: 1
+  patch_jitter_max: 9

@@ -1,0 +1,21 @@
+_target_: udons.models.jigsaw_transformer_model.JigsawTransformerModel
+
+lr: 0.01
+weight_decay: 0.0005
+nb_classes: "${datamodule: nb_classes}"
+nb_patches: "${datamodule: nb_patches}"
+nb_channels: "${datamodule: nb_channels}"
+n_mels: "${datamodule: n_mels}"
+patch_len: "${datamodule: patch_len}"
+depth: 3
+heads: 8
+dim_head: 64
+model_dim: 512
+mlp_dim: 2048
+pool: "cls"
+dropout: 0.0
+emb_dropout: 0.0
+pos_embed: true
+instance_norm: false
+patch_encoder: linear
+mlp_layers: 0

@@ -1,0 +1,9 @@
+_target_: udons.models.jigsawreg_alexnet_model.JigsawRegAlexnetModel
+
+lr: 0.001
+weight_decay: 0.0005
+nb_classes: "${datamodule: nb_classes}"
+nb_patches: "${datamodule: nb_patches}"
+nb_channels: "${datamodule: nb_channels}"
+n_mels: "${datamodule: n_mels}"
+hidden_size: 256

@@ -1,0 +1,87 @@
+# @package _global_
+
+# to execute this experiment run:
+# python run.py experiment=jigsaw_audioset.yaml
+
+defaults:
+  - override /trainer: default.yaml # choose trainer from 'configs/trainer/'
+  - override /model: jigsaw_transformer_model.yaml
+  - override /datamodule: jigsawaudio_datamodule.yaml
+  - override /callbacks: default.yaml
+  - override /logger: tensorboard.yaml
+  - override /hydra/sweeper: optuna
+
+# all parameters below will be merged with parameters from default configurations set above
+# this allows you to overwrite only specified parameters
+
+seed: 12345
+
+trainer:
+  min_epochs: 1
+  max_epochs: 10000
+  gpus: 2
+  accelerator: ddp
+
+model:
+  lr: 0.01
+  pos_embed: true
+  instance_norm: false
+  patch_encoder: linear
+  mlp_layers: 0
+  depth: 3
+  heads: 4
+  dim_head: 64
+  model_dim: 256
+  mlp_dim: 1024
+  pool: "cls"
+
+datamodule:
+  paths: 
+    # - root_dir: /disk1/1000324719/librispeech
+    #   oversample_factor: 1
+    #   train_dir: train-clean-360
+    #   valid_dir: dev-clean
+    #   test_dir: test-clean
+    # - root_dir: /disk1/1000324719/voicebank
+    #   oversample_factor: 1
+    #   train_dir: clean_trainset_28spk_16k_wav
+    #   valid_dir: clean_testset_16k_wav
+    # - root_dir: /disk1/1000324719/AudioSet
+    #   train_dir: balanced_train_10_16
+    # - root_dir: /disk1/1000324719/AudioSet
+    #   train_dir: test_10_16
+    # - root_dir: /disk1/1000324719/musdb18_2instr_16khz
+    #   oversample_factor: 400
+    #   train_dir: train_train
+    #   valid_dir: train_valid
+    #   test_dir: test
+    # - root_dir: /disk1/1000324719/hear-2021.0.3/tasks/dcase2016_task2-hear2021-full/16000
+    #   oversample_factor: 1000
+    #   train_dir: train
+    #   valid_dir: valid
+    #   test_dir: test
+    - root_dir: /disk1/1000324719/hear-2021.0.3/tasks/nsynth_pitch-v2.2.3-50h/16000
+      oversample_factor: 1
+      train_dir: train
+      valid_dir: valid
+      test_dir: test
+    # - root_dir: speech_commands-v0.0.2-full
+    #   oversample_factor: 1
+    #   train_dir: train
+    #   valid_dir: valid
+    #   test_dir: test
+  batch_size: 128
+  nb_patches: 5
+  nb_classes: 120
+  nb_channels: 1
+  nb_timesteps: 48000  # chunk lenght in samples
+  patch_len: 16
+  num_workers: 48
+  n_fft: 400
+  hop_length: 100
+  n_mels: 256
+  f_min: 27.5
+  f_max: 16000
+  sample_rate: 16000
+  patch_jitter_min: 1
+  patch_jitter_max: 9

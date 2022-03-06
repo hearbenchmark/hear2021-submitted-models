@@ -1,0 +1,8 @@
+__pycache__/
+notes.txt
+.vscode/
+wandb/
+data/
+out/
+test_interp.py
+test.py

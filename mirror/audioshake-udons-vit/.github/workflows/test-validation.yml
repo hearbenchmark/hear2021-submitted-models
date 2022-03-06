@@ -1,0 +1,33 @@
+name: Validate the UDONS baseline
+
+on: [pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.8]
+
+    steps:
+      - uses: actions/checkout@master
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@master
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: apt-get
+        run: |
+          sudo apt-get install -y libsndfile-dev
+      - name: Display Python version
+        run: python -c "import sys; print(sys.version)"
+      - name: python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install hearvalidator
+          pip install -e .
+      - name: Get model weights
+        run: |
+          wget https://github.com/faroit/udons/releases/download/submission-v1/epoch_951.ckpt
+      - name: Validate the Torch version
+        run: |
+          hear-validator udons.embed --model ./epoch_951.ckpt

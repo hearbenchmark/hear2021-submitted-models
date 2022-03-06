@@ -1,0 +1,41 @@
+# @package _global_
+
+# to execute this experiment run:
+# python run.py experiment=jigsaw_audioset.yaml
+
+defaults:
+  - override /trainer: default.yaml # choose trainer from 'configs/trainer/'
+  - override /model: jigsaw_model.yaml
+  - override /datamodule: jigsawaudio_datamodule.yaml
+  - override /callbacks: default.yaml
+  - override /logger: null
+
+# all parameters below will be merged with parameters from default configurations set above
+# this allows you to overwrite only specified parameters
+
+seed: 12345
+
+trainer:
+  min_epochs: 1
+  max_epochs: 1000
+  gradient_clip_val: 0.5
+
+model:
+  lr: 0.001
+  nb_patches: 3  # TODO: get these from data hparams
+  nb_classes: 6
+  nb_channels: 1
+
+datamodule:
+  train_dir: balanced_train_10
+  valid_dir: test_10
+  test_dir: test_10
+  batch_size: 128
+  num_workers: 32
+  patch_len: 32
+  nb_patches: 3  # TODO: get these from data hparams
+  nb_channels: 1 # TODOL get from data hparams
+  patch_jitter_min: -1
+  patch_jitter_max: 12
+  sample_rate: 44100
+  nb_timesteps: 220500  # chunk lenght in samples
