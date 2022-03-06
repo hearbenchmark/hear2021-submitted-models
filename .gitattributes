@@ -1,0 +1,6 @@
+mirror/logitech-serab-byol-s/checkpoints/default2048_BYOLAs64x96-2105311814-e100-bs256-lr0003-rs42.pth filter=lfs diff=lfs merge=lfs -text
+mirror/logitech-serab-byol-s/checkpoints/resnetish34_BYOLAs64x96-2105271915-e100-bs256-lr0003-rs42.pth filter=lfs diff=lfs merge=lfs -text
+mirror/kuroyanagi-hearline/saved_models/checkpoint-2821steps.pkl filter=lfs diff=lfs merge=lfs -text
+mirror/soundsensing-yamnet/yamnet/yamnet.h5 filter=lfs diff=lfs merge=lfs -text
+mirror/iut-cse-mlp-keyword/checkpoints/audiomae.pth filter=lfs diff=lfs merge=lfs -text
+mirror/iut-cse-mlp-keyword/checkpoints/kwmlp.pth filter=lfs diff=lfs merge=lfs -text
