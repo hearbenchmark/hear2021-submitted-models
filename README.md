@@ -23,7 +23,9 @@ Models are grouped into three "installation groups". We found that
 most models (group 1) were pytorch >= 1.9 that could peacefully
 co-exist in one installation environment. Group 3 models were
 Tensorflow 2.4 models. Group 2 models were models that could not
-co-exist either with group 1 or group 3 models.
+co-exist either with group 1 or group 3 models. Conflicting
+dependencies is the reason we can't provide one pip3-installable
+package for all HEAR 2021 models.
 
 To install a particular model, the steps are:
 
