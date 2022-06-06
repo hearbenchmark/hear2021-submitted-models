@@ -155,7 +155,7 @@
     },
     "CREPE": {
         "python_module_name": "hearbaseline.torchcrepe",
-        "git_url": "https://github.com/neuralaudio/hear-baseline",
+        "git_url": "https://github.com/hearbenchmark/hear-baseline",
         "git_rev_2021_12_01": "4478f9fd0d6cbc47fd06c66203b0340d1b5da1ad",
         "code_license": "MIT",
         "data_license": "CC BY 4.0",
@@ -163,7 +163,7 @@
     },
     "wav2vec2": {
         "python_module_name": "hearbaseline.wav2vec2",
-        "git_url": "https://github.com/neuralaudio/hear-baseline",
+        "git_url": "https://github.com/hearbenchmark/hear-baseline",
         "git_rev_2021_12_01": "4478f9fd0d6cbc47fd06c66203b0340d1b5da1ad",
         "code_license": "MIT",
         "data_license": "CC BY 4.0",
