@@ -16,7 +16,7 @@ us by the authors.
 Model checkpoints, where necessary, are available at
 [Zenodo](https://zenodo.org/record/6332525). Note that some models
 implicitly download their checkpoints from the internet, instead
-of explicitly loading from disk (as per the 2021 NeurIPS challenge rule), which reduces
+of explicitly loading from disk (as per the 2021 NeurIPS HEAR challenge rules), which reduces
 their replicability.
 
 Models are grouped into three "installation groups". We found that
