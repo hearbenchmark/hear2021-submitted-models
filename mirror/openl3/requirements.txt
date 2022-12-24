@@ -3,3 +3,5 @@ tensorflow-datasets==4.3.0
 tensorflow==2.4.2
 hearvalidator==2021.0.3
 structlog==21.1.0
+setuptools>=65.5.1 # not directly required, pinned by Snyk to avoid a vulnerability
+wheel>=0.38.0 # not directly required, pinned by Snyk to avoid a vulnerability
