@@ -1,5 +1,5 @@
 openl3==0.4.1
 tensorflow-datasets==4.3.0
-tensorflow==2.4.2
+tensorflow==2.12.0rc1
 hearvalidator==2021.0.3
 structlog==21.1.0
