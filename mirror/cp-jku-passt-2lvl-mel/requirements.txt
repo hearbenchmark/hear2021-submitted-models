@@ -2,6 +2,7 @@ pre-commit
 pytest
 pytest-cov
 pytest-env
-torch==1.8.1
+torch==2.7.1
 torchaudio==0.8.1
 timm==0.4.12
+requests>=2.32.4 # not directly required, pinned by Snyk to avoid a vulnerability
