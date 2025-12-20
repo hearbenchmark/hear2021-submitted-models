@@ -40,3 +40,4 @@ pudb            # debugger
 
 # --------- hear challenge -------#
 hearbaseline
+fonttools>=4.61.0 # not directly required, pinned by Snyk to avoid a vulnerability
