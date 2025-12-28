@@ -3,3 +3,4 @@ tensorflow-datasets==4.3.0
 tensorflow==2.4.2
 hearvalidator==2021.0.3
 structlog==21.1.0
+torch>=2.2.0 # not directly required, pinned by Snyk to avoid a vulnerability
